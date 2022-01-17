@@ -95,9 +95,10 @@ const tmp       = require("tmp")
         console.log("-- assembling NDI SDK subset")
         shell.rm("-rf", "ndi")
         shell.mkdir("-p", "ndi/include")
-        shell.mkdir("-p", "ndi/lib/mac-x64")
+        const arch = os.arch();
+        shell.mkdir("-p", "ndi/lib/mac-" + arch)
         shell.mv(path.join(dir1, "NDI SDK for macOS/include/*.h"), "ndi/include/")
-        shell.mv(path.join(dir1, "NDI SDK for macOS/lib/macOS/*.dylib"), "ndi/lib/mac-x64/")
+        shell.mv(path.join(dir1, "NDI SDK for macOS/lib/macOS/*.dylib"), "ndi/lib/mac-" + arch + "/")
 
         /*  remove temporary files  */
         console.log("-- removing temporary files")

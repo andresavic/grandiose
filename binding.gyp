@@ -66,6 +66,16 @@
                     "libraries":    [ "-Wl,-rpath,@loader_path", "-lndi" ],
                     "library_dirs": [ "<(ndi_dir)/lib/mac-x64" ]
                 }
+            } ],
+            [ "OS == 'mac' and target_arch == 'arm64'", {
+                "copies": [ {
+                    "destination":  "build/Release",
+                    "files":        [ "<(ndi_dir)/lib/mac-arm64/libndi.dylib" ]
+                } ],
+                "link_settings": {
+                    "libraries":    [ "-Wl,-rpath,@loader_path", "-lndi" ],
+                    "library_dirs": [ "<(ndi_dir)/lib/mac-arm64" ]
+                }
             } ]
         ]
     } ]
