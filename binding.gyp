@@ -50,7 +50,7 @@
                     "destination":  "build/Release",
                     "files":        [ "<(ndi_dir)/lib/lnx-x64/libndi.so",
                                       "<(ndi_dir)/lib/lnx-x64/libndi.so.5",
-                                      "<(ndi_dir)/lib/lnx-x64/libndi.so.5.0.10" ]
+                                      "<(ndi_dir)/lib/lnx-x64/libndi.so.5.1.1" ]
                 } ],
                 "link_settings": {
                     "libraries":    [ "-Wl,-rpath,'$$ORIGIN'", "-lndi" ],
